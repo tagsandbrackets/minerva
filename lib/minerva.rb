@@ -19,10 +19,12 @@ module Minerva
 
       def no_questions? &block
         @no_questions.call block if @no_questions
+        self
       end
 
       def success? &block
         @success.call block if @success
+        self
       end
     end
   end
