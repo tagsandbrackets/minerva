@@ -9,21 +9,21 @@ module Minerva
         questions = @questions.recent
 
         if questions.empty?
-          @no_questions = -> (handler) { handler.call }
+          @no_questions = true
         else
-          @success = -> (handler) { handler[questions] }
+          @success = { questions: questions }
         end
 
         self
       end
 
       def no_questions? &block
-        @no_questions.call block if @no_questions
+        block.call if @no_questions
         self
       end
 
       def success? &block
-        @success.call block if @success
+        block.call @success[:questions] if @success
         self
       end
     end
