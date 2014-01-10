@@ -58,7 +58,11 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 module FeaturesDSL
   def create_question attributes
-    Question.create attribute
+    Question.create attributes
+  end
+
+  def list_recent_questions
+    visit '/questions/recent'
   end
 end
 

@@ -3,7 +3,7 @@ Given(/^I created the following questions:$/) do |table|
 end
 
 When(/^I list the most recent questions$/) do
-  pending # express the regexp above with the code you wish you had
+  list_recent_questions
 end
 
 Then(/^I should see the following questions:$/) do |table|
